@@ -1,0 +1,32 @@
+#Config for torrent watch
+
+general:
+    loglevel: debug
+    logfile: log
+    sqlite: db.sqlite
+
+    action: #default actions
+        save: ./torrents      #dir to save torrent file
+        runscript: ./torrent_add.py %f  #script run after download file
+        transmission: # or false #update torrent in transmission
+
+             preservSkipedFiles: true
+             preservDownloadDir: true
+             preservStatus: true
+
+             comment-rgexp:
+                 - ['http://free-torrents.org/forum/viewtopic.php\?p\=(.*)', '\1']
+                 - ['http://nnm-club.me/forum/viewtopic.php\?p=(.*)', '\1']
+
+
+nnm:
+     user: vfrc2
+     pass: 1234
+     'importbookmarked': False
+     action: default
+
+transmission:
+    host: localhost
+    port: 9091
+    import: true
+

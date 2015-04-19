@@ -1,0 +1,30 @@
+tasks:
+     nnm-club:
+         rss: 'http://nnm-club.me/forum/rss2.php?f=768&h=72&r&uk=0HhNk9CaFy'
+         # manipulate:
+         #     - description:
+         #         replace:
+         #             regexp: '<a href="(.*)">.*'
+         #             format: '\1'
+
+         # crossmatch:
+         #     from:
+         #         - from_transmission:
+         #             host: localhost
+         #             port: 9091
+         #             onlycomplete: no #	[yes|no]
+         #     fields:
+         #         - title
+         #     action: accept
+
+     #####
+     transmission-list:
+         from_transmission:
+             host: localhost
+             port: 9091
+             onlycomplete: no #	[yes|no]
+         manipulate:
+             - comment:
+                 replace:
+                     regexp:  '(.*)'
+                     format: '/1'
